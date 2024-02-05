@@ -205,10 +205,10 @@
                                 $browseraddress = ($_SERVER["REMOTE_ADDR"]);
 				$browseraddress = substr($browseraddress,0,strlen($browseraddress));
 				?>
-                The address you've accessed this page with is: <span id="remote-ip"><a href="http://www.ipgeek.net/<?php echo $browseraddress; ?>" target=\"_blank\"><?php echo $browseraddress; ?></a></span><br/><br/>
+                The address you've accessed this page with is: <span id="remote-ip"><a href="https://whatismyipaddress.com/ip/<?php echo $browseraddress; ?>" target=\"_blank\"><?php echo $browseraddress; ?></a></span><br/><br/>
                 <?php
                 if(isset($_GET["network"])){			
-					echo "<span id=\"network-ip\"><a href=\"http://www.ipgeek.net/".$networkip."\" target=\"_blank\">".$networkip."</span></a>: CURRENT IP Address for '".$_GET["network"]."'<br/>";
+					echo "<span id=\"network-ip\"><a href=\"https://whatismyipaddress.com/ip/".$networkip."\" target=\"_blank\">".$networkip."</span></a>: CURRENT IP Address for '".$_GET["network"]."'<br/>";
 				}		
 				echo "<span id=\"vpn-ip\"></span>: LATEST reported IP Address<br />";
                 if(isset($_GET["network"])){
@@ -236,8 +236,8 @@
 								$rowip = str_replace('<font color=\'green\'>', '', $rowip);
 								print("<tr>");
 									print("<td align=\"center\">".date("Y-m-d H:i:s",$row["timestamp"] - 60 * 60 * 7)."</td>");
-                                    print("<td align=\"center\"><a href=\"http://www.ipgeek.net/".$rowip."\" target=\"_blank\">".$row["addr"]."</a></td>");
-                                    print("<td align=\"center\">".$row["agent"]."</td>");
+                                    					print("<td align=\"center\"><a href=\"https://whatismyipaddress.com/ip/".$rowip."\" target=\"_blank\">".$row["addr"]."</a></td>");
+                                   		 			print("<td align=\"center\">".$row["agent"]."</td>");
 								print("</tr>");
 								if(isset($_GET["network"])){
 									$vpnstatus = "<font color=\"red\">INACTIVE</font>";
@@ -254,12 +254,12 @@
                                                                 echo '<script type="text/javascript">';
                                                                         //echo 'vpnVerify("'.str_replace("green","black",$latestip).'");';
                                                                         $strippedip = substr($latestip,20, strlen($latestip)-27);
-																		//$strippedip = substr($strippedip, 0, strlen($strippedip)-7);
-																		if(stristr($latestip, $networkip)){
-                                                                                echo 'vpnVerify("<a href=\'http://www.ipgeek.net/'.$strippedip.'\' target=\'_blank\'>'.$latestip.'</a>", "<font color=\"red\">WARNING: The VPN is currently inactive!</font>");';
+									//$strippedip = substr($strippedip, 0, strlen($strippedip)-7);
+									if(stristr($latestip, $networkip)){
+                                                                                echo 'vpnVerify("<a href=\'https://whatismyipaddress.com/ip/'.$strippedip.'\' target=\'_blank\'>'.$latestip.'</a>", "<font color=\"red\">WARNING: The VPN is currently inactive!</font>");';
                                                                         } else {
-                                                                                echo 'vpnVerify("<a href=\'http://www.ipgeek.net/'.$strippedip.'\' target=\'_blank\'>'.str_replace("green","black",$latestip).'</a>", "<font color=\"green\">The VPN is currently active.</font>");';
-																				//echo 'vpnVerify("<a href=\'http://www.ipgeek.net/'.$strippedip.'\' target=\'_blank\'>'.$latestip.'</a>", "<font color=\"green\">The VPN is currently active.</font>");';
+                                                                                echo 'vpnVerify("<a href=\'https://whatismyipaddress.com/ip/'.$strippedip.'\' target=\'_blank\'>'.str_replace("green","black",$latestip).'</a>", "<font color=\"green\">The VPN is currently active.</font>");';
+										//echo 'vpnVerify("<a href=\'https://whatismyipaddress.com/ip/'.$strippedip.'\' target=\'_blank\'>'.$latestip.'</a>", "<font color=\"green\">The VPN is currently active.</font>");';
                                                                         }
                                                                 echo '</script>';
                                                         }
@@ -276,12 +276,12 @@
 						echo "<b><font color=\"black\">VPN Status: </font>".$vpnstatus."</b>&nbsp;";
 					}
 					?>
-                    <!--
-                    Proudly run without ads or web tracking. Set up your own with the
-					<a href="https://github.com/cbdevnet/ipmagnet">[source]</a>
-					<a href="http://www.kopimi.com/kopimi/"><img src="static/kopimi.png" alt="kopimi"/></a>
-					<a href="http://wtfpl.net/"><img src="static/wtfpl.png" alt="wtfpl"/></a>
-                    -->
+			                    <!--
+			                    Proudly run without ads or web tracking. Set up your own with the
+			                    <a href="https://github.com/cbdevnet/ipmagnet">[source]</a>
+			                    <a href="http://www.kopimi.com/kopimi/"><img src="static/kopimi.png" alt="kopimi"/></a>
+			                    <a href="http://wtfpl.net/"><img src="static/wtfpl.png" alt="wtfpl"/></a>
+			                    -->
 				</span>
 			</div>
 		</div>
