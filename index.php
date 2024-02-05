@@ -43,13 +43,6 @@
 		if(isset($_GET["ip"])&&$_GET["ip"]!=$_SERVER["REMOTE_ADDR"]){
 			$addrs.=", ".htmlentities($_GET["ip"], ENT_QUOTES);
 		}
-                
-                //update the Google DDNS domain with the new IP Address
-                //file_get_contents('https://DFuk9pDz7YpJIUIi:EdW74LSIbcvo4bao@domains.google.com/nic/update?hostname=ddnstor.barkeyfamily.com&myip='.$addrs);
-                //$curl = curl_init();
-                //curl_setopt ($curl, CURLOPT_URL, "https://DFuk9pDz7YpJIUIi:EdW74LSIbcvo4bao@domains.google.com/nic/update?hostname=ddnstor.barkeyfamily.com&myip=5.5.5.5");
-                //curl_exec ($curl);
-                //curl_close ($curl);
                
                 if ($addrs != gethostbyname($networkhostname)){
                         $reportedaddrs = $addrs." (VPN Active)";
